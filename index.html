@@ -2,163 +2,147 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hylux MC - BedWars & Duels</title>
-    <meta name="title" content="Hylux MC - Minigames BedWars Duels" />
-    <meta name="description" content="Hylux MC - Servidor de Minigames com BedWars, Duels e mais! IP: br-01.universalhosting.xyz" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://hyluxmc.com/" />
-    <meta property="og:title" content="Hylux MC - BedWars & Duels" />
-    <meta property="og:description" content="Servidor BR de Minigames! BedWars, Duels e muito mais!" />
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/8B00FF/FFFFFF?text=Hylux+MC" />
-
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://hyluxmc.com/" />
-    <meta property="twitter:title" content="Hylux MC - BedWars & Duels" />
-    <meta property="twitter:description" content="Junte-se ao melhor servidor BR de Minigames!" />
-    <meta name="theme-color" content="#8B00FF" />
-    <meta property="twitter:image" content="https://via.placeholder.com/1200x630/8B00FF/FFFFFF?text=Hylux+MC" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles/style.css" />
+    <meta name="description" content="Servidor BR focado em Minigames, BedWars, Duels, SkyWars, ranks VIP exclusivos. IP: br-01.universalhosting.xyz">
     <style>
+        html, body { height: 100%; margin: 0; padding: 0; }
         body {
-            background: linear-gradient(135deg, #1a0033 0%, #4b0082 50%, #8B00FF 100%);
-            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg,#29004e 0%,#8000ff 95%);
+            font-family: 'Outfit', Arial, sans-serif;
             color: white;
-            padding: 20px;
-            margin: 0;
         }
-        h1 { color: #DDA0DD !important; text-shadow: 0 0 20px #8B00FF; font-size: 4rem; margin-bottom: 10px; }
-        .vip-card { padding: 20px; margin: 10px 0; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .vip-ultra { background: linear-gradient(45deg, #1E3A8A, #3730A3); color: white; }
-        .vip-elite { background: linear-gradient(45deg, #F59E0B, #EF4444); color: white; }
-        .vip-plus { background: linear-gradient(45deg, #10B981, #059669); color: white; }
-        .vip-beta { background: linear-gradient(45deg, #8A2BE2, #4B0082); color: white; }
-        button, .discord-btn, .buy-btn { cursor: pointer; border: none; font-weight: 600; border-radius: 10px; transition: 0.3s; color: white; text-decoration: none; display: inline-block; padding: 12px 25px; margin: 5px; }
-        button.vip-ultra { background: linear-gradient(45deg, #1E3A8A, #3730A3); padding: 12px 30px; font-size: 1.2rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-        .buy-btn { background: linear-gradient(45deg, #00FF88, #00CC66); font-size: 1.1rem; font-weight: 700; }
-        .buy-btn:hover { filter: brightness(1.1); transform: scale(1.05); }
-        .pix-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; }
-        .pix-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #2a1a4a; padding: 30px; border-radius: 20px; max-width: 500px; text-align: center; }
-        .close-modal { background: #FF4444; color: white; padding: 10px 20px; border: none; border-radius: 10px; cursor: pointer; margin-top: 20px; }
-        .pix-qr { width: 200px; height: 200px; margin: 20px auto; background: #333; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 12px; }
-        .maintenance { background: #FFAA00; color: #333; padding: 10px; border-radius: 5px; font-size: 0.9rem; margin-top: 10px; }
+        .container { max-width: 750px; margin: auto; padding: 24px; }
+        h1 {
+            font-size: 3.2rem;
+            color: #C775FF;
+            margin: 20px 0 0;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        .desc {
+            font-size: 1.18rem;
+            text-align: center;
+            margin: 12px 0 32px;
+            color: #ffeafb;
+        }
+        .server-ip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            background: #26133D;
+            padding: 9px 22px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin: 0 auto 25px;
+            width: fit-content;
+        }
+        .main-btns {
+            display: flex; margin: 26px 0 18px; gap: 18px; justify-content: center;
+            flex-wrap: wrap;
+        }
+        .main-btns a {
+            padding: 12px 30px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: white;
+            transition: 0.3s;
+        }
+        .btn-loja {background: linear-gradient(45deg,#4544ef,#5fefff);}
+        .btn-tags {background: linear-gradient(90deg,#b61cff,#6a14be);}
+        .btn-discord {background: linear-gradient(45deg,#6b6bff,#7c4cff);}
+        .btn-discord:hover { background: linear-gradient(45deg,#5661f2,#9474fa); }
+        section {margin-bottom: 32px;}
+        .tags-section {margin-top: 2.5em;}
+        .vip-list {display: flex; flex-direction: column; gap: 22px;}
+        .vip-card {
+            border-radius: 14px;
+            padding: 23px 19px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.38);
+            font-size: 1.13rem;
+        }
+        .vip-beta { background: linear-gradient(90deg,#6a46d2,#b674ff); color: #fff;}
+        .vip-ultra { background: linear-gradient(90deg,#23349b,#675ff3); color:#c5e8ff;}
+        .vip-elite { background: linear-gradient(90deg,#febc38,#ff795c); color:#fff2e0;}
+        .vip-plus { background: linear-gradient(90deg,#34ff81,#086b32); color:#eafff1;}
+        .vip-title {font-weight: 900; font-size: 1.22rem; margin-bottom: 8px;}
+        .vip-price {font-weight: 700; font-size: 1.09rem;}
+        .vip-benefits {margin: 8px 0 0 0; font-size: 0.97rem;}
+        @media (max-width:600px){
+            .container { padding: 8px;}
+            h1 { font-size:2.2rem;}
+        }
     </style>
 </head>
 <body>
-    <main>
+    <div class="container">
+
+        <!-- Título e Sobre -->
         <h1>Hylux MC</h1>
-        <button onclick="copyIp()" class="vip-ultra" title="Clique para copiar IP do servidor">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="width: 24px; height: 24px;">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184" />
-            </svg>
+        <div class="desc">
+            O melhor servidor de minigames do Brasil! <br> Jogue BedWars, Duels, SkyWars, participe de eventos diários e conquiste tags exclusivas!
+        </div>
+        <div class="server-ip" title="Clique para copiar" onclick="copyIp()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#AA63F9" stroke-width="2"><rect x="6" y="8" width="12" height="12" rx="2.5" /><rect x="6" y="4" width="8" height="4" rx="1" stroke-width="2" stroke="#AA63F9" /></svg>
             br-01.universalhosting.xyz
-        </button>
-        <p><strong>Servidor BR de Minigames!</strong> BedWars, Duels, SkyWars e muito mais. Jogue agora!</p>
+        </div>
+        <div class="main-btns">
+            <a href="#loja" class="btn-loja">Ir para Loja</a>
+            <a href="#tags" class="btn-tags">Ver Tags</a>
+            <a href="https://discord.gg/sH4HMWVakt" class="btn-discord" target="_blank">Entrar no Discord</a>
+        </div>
 
-        <section>
-            <h2 style="color: #DDA0DD; text-align: center;">LOJA DE VIPS E BETA</h2>
+        <!-- Seção Tags -->
+        <section class="tags-section" id="tags">
+            <h2 style="text-align:center;color:#ffdcfd;font-size:2rem">Nossas Tags & VIPs</h2>
+            <div class="vip-list">
 
-            <div class="vip-card vip-beta">
-                <h3>💜 BETA (GRÁTIS)</h3>
-                <p><strong>Ilimitado e removível</strong></p>
-                <p>Voar no lobby, escolher mapas, tag exclusiva no jogo e no Discord, criar clans e colocar cores!</p>
-                <button class="buy-btn" onclick="buyBeta()">PEGAR BETA GRÁTIS</button>
-            </div>
+                <div class="vip-card vip-beta">
+                    <div class="vip-title">💜 BETA</div>
+                    <div class="vip-price">R$32,20 <span style="font-size:0.9rem;">(limitada)</span></div>
+                    <div class="vip-benefits">
+                        Voar no lobby, escolher mapas, tag exclusiva no jogo e no Discord, criar clans e colocar cores!
+                    </div>
+                </div>
+                
+                <div class="vip-card vip-ultra">
+                    <div class="vip-title">🟣 ULTRA</div>
+                    <div class="vip-price">R$25,40/mês</div>
+                    <div class="vip-benefits">
+                        Criar clans com cores, escolher mapas, voar no lobby, tags exclusivas no jogo e Discord
+                    </div>
+                </div>
 
-            <div class="vip-card vip-ultra">
-                <h3>🟣 ULTRA</h3>
-                <p><strong>R$25,40/mês</strong></p>
-                <p>Pode criar clans com cores, escolher mapas, voar no lobby, tags exclusivas no jogo e no Discord</p>
-                <button class="buy-btn" onclick="buyVip('ULTRA', 25.40)">COMPRAR AGORA</button>
-            </div>
-
-            <div class="vip-card vip-elite">
-                <h3>🟡 ELITE</h3>
-                <p><strong>R$15,70/mês</strong></p>
-                <p>Pode criar clans sem colocar cores, escolher cores e tags exclusivas no jogo e no Discord</p>
-                <button class="buy-btn" onclick="buyVip('ELITE', 15.70)">COMPRAR AGORA</button>
-            </div>
-
-            <div class="vip-card vip-plus">
-                <h3>🟢 VIP+</h3>
-                <p><strong>R$10,40/mês</strong></p>
-                <p>Escolher mapas e tags exclusivas no jogo e Discord</p>
-                <button class="buy-btn" onclick="buyVip('VIP+', 10.40)">COMPRAR AGORA</button>
+                <div class="vip-card vip-elite">
+                    <div class="vip-title">🟡 ELITE</div>
+                    <div class="vip-price">R$15,70/mês</div>
+                    <div class="vip-benefits">
+                        Criar clans sem colocar cores, escolher cores e tags exclusivas no jogo e Discord
+                    </div>
+                </div>
+                <div class="vip-card vip-plus">
+                    <div class="vip-title">🟢 VIP+</div>
+                    <div class="vip-price">R$10,40/mês</div>
+                    <div class="vip-benefits">
+                        Escolher mapas e tags exclusivas no jogo e Discord
+                    </div>
+                </div>
             </div>
         </section>
-
-        <div style="text-align: center;">
-            <a href="https://discord.gg/sH4HMWVakt" class="discord-btn" target="_blank" style="background: linear-gradient(45deg, #5865F2, #4752C4);"><strong>👑 Entrar no Discord</strong></a>
-        </div>
-
-        <nav style="margin-top: 40px; text-align: center;">
-            <a href="#loja" style="color: white; margin: 0 15px; text-decoration: none; font-weight: 600;">Loja</a>
-            <a href="https://discord.gg/sH4HMWVakt" style="color: white; margin: 0 15px; text-decoration: none; font-weight: 600;" target="_blank">Discord</a>
-            <a href="#stats" style="color: white; margin: 0 15px; text-decoration: none; font-weight: 600;">Stats</a>
-        </nav>
-    </main>
-
-    <!-- MODAL PIX -->
-    <div id="pixModal" class="pix-modal">
-        <div class="pix-content">
-            <h2 id="pixTitle">PIX - <span id="pixVipName"></span></h2>
-            <p><strong>Valor: R$ <span id="pixValue">0,00</span></strong></p>
-            <p>Envie o PIX para: <strong>SEU_CPF_OU_EMAIL@PIX</strong></p>
-            <div class="pix-qr">📱 ESCANEIE O QR CODE<br>(PIX COPIA E COLA)</div>
-            <p><strong>✅ APÓS PAGAR:</strong></p>
-            <p>1. Entre no <a href="https://discord.gg/sH4HMWVakt" target="_blank" style="color: #5865F2;">Discord</a></p>
-            <p>2. Abra um <strong>#ticket-comprovante</strong></p>
-            <p>3. Envie o comprovante + seu nick + tag comprada</p>
-            
-            <div class="maintenance">
-                📧 Email em manutenção (em breve)
-            </div>
-            
-            <button class="close-modal" onclick="closePixModal()">FECHAR</button>
-        </div>
+        <!-- Loja (apenas como âncora, pode expandir depois) -->
+        <section id="loja"></section>
     </div>
-
     <script>
-        let currentVip = '';
-        let currentValue = 0;
-
         function copyIp() {
             navigator.clipboard.writeText("br-01.universalhosting.xyz").then(() => {
                 alert("IP copiado! br-01.universalhosting.xyz");
             });
-        }
-
-        function buyVip(vipName, value) {
-            currentVip = vipName;
-            currentValue = value;
-            showPixModal(vipName, value);
-        }
-
-        function buyBeta() {
-            alert("🎉 BETA ativado! Entre no Discord e peça no #tickets!");
-        }
-
-        function showPixModal(vipName, value) {
-            document.getElementById('pixVipName').textContent = vipName;
-            document.getElementById('pixValue').textContent = value.toFixed(2);
-            document.getElementById('pixModal').style.display = 'block';
-        }
-
-        function closePixModal() {
-            document.getElementById('pixModal').style.display = 'none';
-        }
-
-        // Fechar modal clicando fora
-        window.onclick = function(event) {
-            if (event.target.classList.contains('pix-modal')) {
-                closePixModal();
-            }
         }
     </script>
 </body>
