@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hylux MC - BedWars & Duels</title>
 
-    <!-- Fonte do título e geral -->
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Fontes: título estilo pixel + corpo -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
 
     <style>
         :root {
-            --roxo-escuro: #1a002f;
-            --roxo-medio: #5b00a8;
+            --roxo-escuro: #050014;
+            --roxo-medio: #541388;
             --roxo-claro: #d574ff;
             --verde-btn: #00ff9a;
         }
@@ -20,9 +20,18 @@
         html, body { margin: 0; padding: 0; }
         body {
             min-height: 100vh;
-            background: radial-gradient(circle at top, #5b00a8 0, #1a002f 55%, #050011 100%);
             font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             color: #fdf4ff;
+            background:
+                radial-gradient(circle at top, rgba(180, 83, 255, 0.55) 0, transparent 55%),
+                radial-gradient(circle at bottom, rgba(59, 130, 246, 0.45) 0, transparent 60%),
+                repeating-linear-gradient(
+                    45deg,
+                    #12001f 0,
+                    #12001f 8px,
+                    #19002b 8px,
+                    #19002b 16px
+                );
         }
 
         .container {
@@ -35,34 +44,50 @@
 
         header {
             text-align: center;
-            padding: 16px 0 12px;
+            padding: 20px 0 12px;
         }
 
         .logo-text {
-            font-family: "Bungee Spice", system-ui;
-            font-size: 3.2rem;
+            font-family: "Press Start 2P", system-ui;
+            font-size: 2.3rem;
             letter-spacing: 3px;
-            text-shadow: 0 0 22px rgba(255, 255, 255, 0.35);
+            text-shadow:
+                0 0 8px #000,
+                0 0 16px rgba(0, 0, 0, 0.9),
+                0 0 24px rgba(180, 83, 255, 0.9);
+            color: #fef9c3;
+        }
+
+        .logo-shadow-box {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 8px;
+            background: linear-gradient(145deg, #111827, #020617);
+            box-shadow:
+                0 0 0 2px rgba(248, 250, 252, 0.06),
+                0 20px 40px rgba(0, 0, 0, 0.8);
         }
 
         .subtitle {
-            margin-top: 4px;
-            font-size: 1.15rem;
-            color: #ffe6ff;
+            margin-top: 10px;
+            font-size: 1.05rem;
+            color: #e5e7eb;
         }
 
         .ip-box {
             margin: 22px auto 0;
             width: fit-content;
-            background: rgba(12, 2, 35, 0.9);
-            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.95);
+            border-radius: 10px;
             padding: 10px 22px;
             display: flex;
             align-items: center;
             gap: 8px;
             cursor: pointer;
-            border: 1px solid rgba(213, 116, 255, 0.5);
-            box-shadow: 0 0 16px rgba(213, 116, 255, 0.35);
+            border: 1px solid rgba(129, 140, 248, 0.6);
+            box-shadow:
+                0 0 0 1px rgba(15, 23, 42, 0.7),
+                0 14px 35px rgba(15, 23, 42, 0.95);
         }
 
         .ip-box span {
@@ -73,12 +98,20 @@
         .ip-note {
             margin-top: 6px;
             font-size: 0.9rem;
-            color: #d1b9ff;
+            color: #c4b5fd;
+        }
+
+        .hero-card {
+            margin-top: 26px;
+            padding: 18px 18px 20px;
+            border-radius: 18px;
+            background: radial-gradient(circle at top left, rgba(124, 58, 237, 0.4), rgba(15, 23, 42, 0.98));
+            border: 1px solid rgba(209, 213, 219, 0.16);
+            box-shadow: 0 18px 60px rgba(15, 23, 42, 0.9);
         }
 
         .hero-text {
-            margin-top: 26px;
-            font-size: 1.02rem;
+            font-size: 0.98rem;
             line-height: 1.6;
             text-align: center;
             color: #f8e8ff;
@@ -94,7 +127,7 @@
         .badge {
             padding: 6px 14px;
             border-radius: 999px;
-            background: linear-gradient(90deg, #f97316, #ec4899);
+            background: linear-gradient(90deg, #22c55e, #3b82f6);
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -102,7 +135,7 @@
         }
 
         .main-actions {
-            margin-top: 28px;
+            margin-top: 22px;
             display: flex;
             justify-content: center;
             gap: 12px;
@@ -111,10 +144,10 @@
 
         .btn {
             border-radius: 999px;
-            padding: 11px 26px;
+            padding: 10px 24px;
             border: none;
             font-weight: 700;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: 0.25s transform, 0.25s box-shadow, 0.25s filter;
             text-decoration: none;
@@ -127,26 +160,20 @@
             box-shadow: 0 0 18px rgba(0, 255, 153, 0.45);
         }
 
-        .btn-secondary {
-            background: linear-gradient(120deg, #4f46e5, #7c3aed);
-            color: #f9fafb;
-            box-shadow: 0 0 18px rgba(129, 140, 248, 0.5);
-        }
-
         .btn-discord {
             background: linear-gradient(115deg, #5865f2, #8542f5);
             color: white;
             box-shadow: 0 0 18px rgba(88, 101, 242, 0.7);
         }
 
-        .btn:hover { transform: translateY(-1px) scale(1.02); filter: brightness(1.07); }
+        .btn:hover { transform: translateY(-1px) scale(1.03); filter: brightness(1.07); }
 
         hr.section-divider {
             margin: 40px auto 26px;
             width: 75%;
-            max-width: 500px;
+            max-width: 520px;
             border: none;
-            border-top: 1px solid rgba(229, 231, 235, 0.18);
+            border-top: 1px solid rgba(148, 163, 184, 0.4);
         }
 
         /* LOJA DE TAGS */
@@ -177,8 +204,8 @@
             padding: 18px 16px 16px;
             position: relative;
             cursor: pointer;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
-            border: 1px solid rgba(249, 250, 251, 0.02);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85);
+            border: 1px solid rgba(249, 250, 251, 0.04);
             overflow: hidden;
             transition: 0.25s transform, 0.25s box-shadow, 0.25s filter;
         }
@@ -188,14 +215,14 @@
             position: absolute;
             inset: 0;
             opacity: 0.4;
-            background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.3), transparent 55%);
+            background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.25), transparent 55%);
             pointer-events: none;
         }
 
         .vip-card:hover {
             transform: translateY(-4px);
             filter: brightness(1.04);
-            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.75);
+            box-shadow: 0 22px 60px rgba(0, 0, 0, 0.9);
         }
 
         .vip-beta { background: linear-gradient(135deg, #7c3aed, #ec4899); }
@@ -214,7 +241,7 @@
             width: 11px;
             height: 11px;
             border-radius: 999px;
-            background: rgba(255, 255, 255, 0.78);
+            background: rgba(255, 255, 255, 0.88);
             margin-right: 6px;
         }
 
@@ -256,13 +283,13 @@
         }
 
         .modal {
-            background: #0b0320;
+            background: #020617;
             border-radius: 18px;
             padding: 20px 18px 18px;
             max-width: 420px;
             width: 92%;
-            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(209, 213, 219, 0.25);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.4);
         }
 
         .modal-title {
@@ -337,7 +364,7 @@
 
         @media (max-width:600px){
             .container { padding: 16px 10px 50px; }
-            .logo-text { font-size: 2.4rem; }
+            .logo-text { font-size: 1.7rem; }
         }
     </style>
 </head>
@@ -346,7 +373,9 @@
 
     <!-- PRIMEIRA PÁGINA -->
     <header>
-        <div class="logo-text">HYLUX MC</div>
+        <div class="logo-shadow-box">
+            <div class="logo-text">HYLUX MC</div>
+        </div>
         <div class="subtitle">Servidor BR de BedWars, Duels e minigames!</div>
 
         <div class="ip-box" onclick="copyIp()" title="Clique para copiar o IP">
@@ -354,20 +383,20 @@
         </div>
         <div class="ip-note">Clique para copiar e entrar pelo Minecraft Java.</div>
 
-        <div class="hero-text">
-            Entre em lobbys cheios, suba no ranking de BedWars e dispute duelos insanos com uma comunidade ativa.
-            Tags especiais liberam perks exclusivos no lobby, no jogo e no Discord!
-        </div>
-
-        <div class="hero-badges">
-            <div class="badge">BEDWARS</div>
-            <div class="badge">DUELS</div>
-            <div class="badge">MINIGAMES</div>
-        </div>
-
-        <div class="main-actions">
-            <a href="#tags" class="btn btn-primary">Ver tags & preços</a>
-            <a href="https://discord.gg/sH4HMWVakt" target="_blank" class="btn btn-discord">Entrar no Discord</a>
+        <div class="hero-card">
+            <div class="hero-text">
+                Entre em lobbys cheios, suba no ranking de BedWars e dispute duelos insanos com uma comunidade ativa.
+                Tags especiais liberam perks exclusivos no lobby, no jogo e no Discord!
+            </div>
+            <div class="hero-badges">
+                <div class="badge">BEDWARS</div>
+                <div class="badge">DUELS</div>
+                <div class="badge">MINIGAMES</div>
+            </div>
+            <div class="main-actions">
+                <a href="#tags" class="btn btn-primary">Ver tags & preços</a>
+                <a href="https://discord.gg/sH4HMWVakt" target="_blank" class="btn btn-discord">Entrar no Discord</a>
+            </div>
         </div>
     </header>
 
@@ -456,7 +485,7 @@
         </div>
 
         <div class="qr-box">
-            <!-- Troque as imagens pelos QR Codes gerados no seu banco -->
+            <!-- Coloque aqui as imagens dos QR Codes que você gerou no banco -->
             <img id="qrImage" src="" alt="QR Code PIX">
         </div>
 
